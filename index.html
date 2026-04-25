@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0B2465">
+  <title>BonnaGo · Pide y recibe</title>
+  <meta name="description" content="BonnaGo: postres artesanales para Cartagena y alrededores. Pide en segundos, paga fácil y recibe en la fecha que tú elijas.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B2465'/><text x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Poppins,Arial,sans-serif' font-size='62' font-weight='700' fill='white'>B</text></svg>">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html">
+        <div class="brand__mark">B</div>
+        <span>BonnaGo</span>
+      </a>
+      <nav class="nav__actions">
+        <a class="nav__link" href="#products">Menú</a>
+        <button class="nav__link nav__track" id="trackBtn" type="button">Mi pedido</button>
+        <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-btn__label">Canasta</span>
+          <span class="cart-btn__count" id="cartCount" style="display:none;">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO / CARRUSEL DE PROMOCIONES -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="promo-carousel" id="promoCarousel">
+          <div class="promo-carousel__track" id="promoTrack"></div>
+          <div class="promo-carousel__dots" id="promoDots"></div>
+          <button class="promo-carousel__nav promo-carousel__nav--prev" id="promoPrev" aria-label="Anterior">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="promo-carousel__nav promo-carousel__nav--next" id="promoNext" aria-label="Siguiente">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="container section" id="products">
+      <div class="section__head">
+        <div>
+          <div class="eyebrow">Nuestro menú</div>
+          <h2 class="section__title" id="sectionTitle">Algo rico para <em>cada antojo</em></h2>
+        </div>
+        <div class="section__meta">Entrega programada · Cartagena y alrededores</div>
+      </div>
+
+      <div class="cats" id="cats" role="tablist" aria-label="Categorías"></div>
+
+      <div class="grid-products" id="grid"></div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAV MOBILE -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="Navegación principal">
+    <button class="bottom-nav__item is-active" data-tab="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12L12 3l9 9v9a2 2 0 01-2 2h-3v-7H10v7H7a2 2 0 01-2-2v-9z"/>
+      </svg>
+      <span>Inicio</span>
+    </button>
+    <button class="bottom-nav__item" data-tab="cat-tortas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 11h14v9H5z"/><path d="M5 11V8a3 3 0 013-3h8a3 3 0 013 3v3"/><path d="M9 5V3M15 5V3M12 5V2"/>
+      </svg>
+      <span>Tortas</span>
+    </button>
+    <button class="bottom-nav__item" data-tab="cat-jars">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 8h10v12a2 2 0 01-2 2H9a2 2 0 01-2-2V8z"/><path d="M6 5h12v3H6z"/><path d="M9 13h6"/>
+      </svg>
+      <span>Jars</span>
+    </button>
+    <button class="bottom-nav__item" data-tab="cat-porciones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="14" cy="9" r="1" fill="currentColor"/><circle cx="13" cy="15" r="1" fill="currentColor"/><circle cx="9" cy="14" r="1" fill="currentColor"/>
+      </svg>
+      <span>Porciones</span>
+    </button>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© BonnaGo · Cartagena · 2026</div>
+      <div>
+        <a href="admin.html">Ingreso admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRITO BAR (sticky inferior) -->
+  <div class="cart-bar" id="cartBar" role="button" tabindex="0" aria-label="Ver carrito">
+    <div class="cart-bar__info">
+      <span class="cart-bar__count" id="cartBarCount">0 productos</span>
+      <span class="cart-bar__total" id="cartBarTotal">$0</span>
+    </div>
+    <button class="cart-bar__cta">
+      Ver pedido
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- SCRIM compartido -->
+  <div class="scrim" id="scrim"></div>
+
+  <!-- DRAWER carrito -->
+  <aside class="drawer" id="drawer" aria-label="Carrito">
+    <header class="drawer__head">
+      <h2 class="drawer__title">Tu pedido</h2>
+      <button class="drawer__close" id="drawerClose" aria-label="Cerrar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </header>
+    <div class="drawer__body" id="drawerBody"></div>
+    <div class="drawer__foot" id="drawerFoot"></div>
+  </aside>
+
+  <!-- MODAL producto -->
+  <div class="modal" id="productModal" role="dialog" aria-modal="true">
+    <div class="modal__panel"></div>
+  </div>
+
+  <!-- MODAL pago -->
+  <div class="modal pay-modal" id="paymentModal" role="dialog" aria-modal="true">
+    <div class="modal__panel"></div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span class="toast__icon">✓</span>
+    <span class="toast__msg"></span>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
