@@ -94,6 +94,18 @@ const DEFAULT_PRODUCTS = [
     toppingIds: [],
     tag: 'Favorita',
   },
+  {
+    id: 'p-2',
+    name: 'Bonnav Jar (9 Onz)',
+    categoryId: 'cat-jars',
+    price: 10000,
+    discount: 0,
+    emoji: '🥕',
+    description: 'Suave y reconfortante. Ideal para esos momentos que se alargan sin darte cuenta.',
+    allowsToppings: false,
+    toppingIds: [],
+    tag: 'Favorita',
+  },
 ];
 
 const DEFAULT_PAYMENT = {
