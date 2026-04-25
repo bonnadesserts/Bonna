@@ -79,6 +79,7 @@ const DEFAULT_PROMOTIONS = [
     active: true,
   },
 ];
+];
 
 const DEFAULT_PRODUCTS = [
  const DEFAULT_PRODUCTS = [
